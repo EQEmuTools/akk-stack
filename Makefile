@@ -161,35 +161,35 @@ image-build-push-all: ##@image-build Build and push all images
 # eqemu-server
 
 image-eqemu-server-build: ##@image-build Builds image
-	docker build containers/eqemu-server -t akkadius/eqemu-server:latest
-	docker build containers/eqemu-server -t akkadius/eqemu-server:v16
+	docker build containers/eqemu-server -t eqemulator/eqemu-server:latest
+	docker build containers/eqemu-server -t eqemulator/eqemu-server:v16
 
 image-eqemu-server-build-dev: ##@image-build Builds image (development)
 	make image-eqemu-server-build
-	docker build -f ./containers/eqemu-server/dev.dockerfile ./containers/eqemu-server -t akkadius/eqemu-server:v16-dev
+	docker build -f ./containers/eqemu-server/dev.dockerfile ./containers/eqemu-server -t eqemulator/eqemu-server:v16-dev
 
 image-eqemu-server-push: ##@image-build Publishes image
-	docker push akkadius/eqemu-server:latest
-	docker push akkadius/eqemu-server:v16
+	docker push eqemulator/eqemu-server:latest
+	docker push eqemulator/eqemu-server:v16
 
 image-eqemu-server-push-dev: ##@image-build Publishes image
-	docker push akkadius/eqemu-server:v16-dev
+	docker push eqemulator/eqemu-server:v16-dev
 
 # peq-editor
 
 image-peq-editor-build: ##@image-build Builds image
-	docker build containers/peq-editor -t akkadius/peq-editor:latest
+	docker build containers/peq-editor -t eqemulator/peq-editor:latest
 
 image-peq-editor-push: ##@image-build Publishes image
-	docker push akkadius/peq-editor:latest
+	docker push eqemulator/peq-editor:latest
 
 # backup-cron
 
 image-backup-cron-build: ##@image-build Builds image
-	docker build containers/backup-cron -t akkadius/eqemu-backup-cron:latest
+	docker build containers/backup-cron -t eqemulator/eqemu-backup-cron:latest
 
 image-backup-cron-push: ##@image-build Publishes image
-	docker push akkadius/eqemu-backup-cron:latest
+	docker push eqemulator/eqemu-backup-cron:latest
 
 #----------------------
 # Workflow
